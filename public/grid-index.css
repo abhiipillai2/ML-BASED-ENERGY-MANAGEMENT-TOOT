@@ -1,0 +1,36 @@
+@media only screen and (max-width: 360px) {
+    .logo {
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .list-nav ul {
+        display: none;
+    }
+    .menu-icon-div {
+        display: block;
+    }
+    /*login page*/
+    .registration-form-div {
+        width: 300px;
+        height: 408px;
+    }
+    .registration-form-div form {
+        margin-top: 5px;
+        padding: 12px;
+        color: black;
+        font-size: 12px;
+    }
+    .registration-form-div input {
+        width: 270px;
+        padding: 4px;
+        padding-right: 40px;
+    }
+    .registration-form-div button {
+        width: 270px;
+        padding: 6px 20px;
+        margin-top: 3px;
+    }
+    .registration-form-div p {
+        display: none;
+    }
+}

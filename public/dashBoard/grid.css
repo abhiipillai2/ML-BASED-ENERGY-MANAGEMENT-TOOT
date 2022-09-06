@@ -1,0 +1,361 @@
+@media only screen and (max-width: 1366px) {
+    .nav-bar {
+        width: 260px;
+        height: 100%;
+    }
+    .logo {
+        margin-top: -90px;
+        margin-left: 10px;
+        width: 230px;
+        height: 60px;
+    }
+    .over-lay {
+        margin-top: -30px;
+        height: 150px;
+        width: 260px;
+    }
+    .list {
+        margin-top: 100px;
+        margin-left: -18px;
+    }
+    .list ul li {
+        padding: 5px;
+    }
+    .list ul li a {
+        font-size: 15px;
+    }
+    .relese-note {
+        margin-left: 20px;
+        margin-top: 80px;
+        padding: 10px;
+        width: 220px;
+        height: 250px;
+    }
+    .relese-note h2 {
+        margin-top: -3px;
+        padding-bottom: 5px;
+        font-size: 20px;
+        font-weight: 590;
+    }
+    /*nav bar ending here*/
+    .account {
+        top: 0px;
+        height: 50px;
+        width: 100%;
+    }
+    .user-icon {
+        font-size: 25px;
+        margin-top: 10px;
+        margin-right: 100px;
+    }
+    .connect-icon {
+        font-size: 25px;
+        margin-top: 10px;
+        margin-right: 15px;
+    }
+    .produt-dis {
+        width: 850px;
+        height: 60px;
+        margin-left: 380px;
+    }
+    .produt-dis p {
+        letter-spacing: 1px;
+        line-height: 18px;
+    }
+    .module-1 {
+        margin-left: 320px;
+        width: 100%;
+    }
+    .module-1 h1 {
+        margin-left: 50px;
+        font-size: 25px;
+    }
+    .list-bar ul {
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+    .list-bar ul li {
+        line-height: 80px;
+        padding-right: 250px;
+        font-size: 18px;
+    }
+    .power-graph-div {
+        width: 900px;
+        height: 280px;
+        margin-left: 30px;
+    }
+    .power-graph {
+        margin-top: 100px;
+    }
+    .module-1 h3 {
+        margin-left: 760px;
+        margin-top: 30px;
+    }
+    /*module 1 ends*/
+    .module-2 {
+        margin-left: 320px;
+        width: 100%;
+    }
+    .module-2 h1 {
+        margin-left: 50px;
+        margin-top: 26px;
+        font-size: 25px;
+    }
+    .socket-m-2 {
+        margin-top: 40px;
+        margin-left: 50px;
+        width: 400px;
+        height: 250px;
+    }
+    .list-bar-m-2 ul {
+        margin-top: 0px;
+        margin-left: 15px;
+    }
+    .list-bar-m-2 ul li {
+        padding-right: 30px;
+        font-size: 15px;
+    }
+    .list-bar-m-2 p {
+        padding: 20px;
+        line-height: 20px;
+    }
+    .socket-m-2-line {
+        margin-top: 60px;
+        margin-left: 50px;
+        width: 280px;
+    }
+    .socket-m-2-line h1 {
+        font-size: 30px;
+        margin-left: 80px;
+    }
+    /*module 2 ends*/
+    .module-3 {
+        margin-left: 320px;
+        width: 100%;
+    }
+    .module-3 h1 {
+        margin-left: 50px;
+        margin-top: 26px;
+        font-size: 25px;
+    }
+    .socket-m-3 {
+        margin-top: 40px;
+        margin-left: 50px;
+        width: 400px;
+        height: 250px;
+    }
+    .list-bar-m-3 ul {
+        margin-top: 0px;
+        margin-left: 15px;
+    }
+    .list-bar-m-3 ul li {
+        padding-right: 30px;
+        font-size: 15px;
+    }
+    .list-bar-m-3 p {
+        padding: 20px;
+    }
+    .socket-m-3-line {
+        margin-top: 60px;
+        margin-left: 60px;
+        width: 280px;
+    }
+    .socket-m-3-line h1 {
+        font-size: 30px;
+        margin-left: 80px;
+    }
+    .config-res {
+        margin-left: 350px;
+        font-size: 23px;
+        margin-top: 6px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .nav-bar {
+        display: none;
+        width: 260px;
+        height: 100%;
+    }
+    .logo {
+        margin-top: -90px;
+        margin-left: 10px;
+        width: 230px;
+        height: 60px;
+    }
+    .over-lay {
+        margin-top: -30px;
+        height: 150px;
+        width: 260px;
+    }
+    .list {
+        margin-top: 100px;
+        margin-left: -18px;
+    }
+    .list ul li {
+        padding: 5px;
+    }
+    .list ul li a {
+        font-size: 15px;
+    }
+    .relese-note {
+        margin-left: 20px;
+        margin-top: 70px;
+        padding: 10px;
+        width: 220px;
+        height: 200px;
+    }
+    .relese-note h2 {
+        margin-top: -3px;
+        padding-bottom: 5px;
+        font-size: 20px;
+        font-weight: 590;
+    }
+    /*nav bar ending here*/
+    .account {
+        top: 0px;
+        height: 50px;
+        width: 100%;
+    }
+    .user-icon {
+        font-size: 25px;
+        margin-top: 10px;
+        margin-right: 60px;
+    }
+    .connect-icon {
+        font-size: 25px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .produt-dis {
+        width: 340px;
+        padding: 10px;
+        height: 140px;
+        margin-top: 60px;
+        margin-left: 25px;
+    }
+    .produt-dis p {
+        letter-spacing: 1px;
+        line-height: 18px;
+    }
+    .module-1 {
+        margin-left: 10px;
+        width: 100%;
+    }
+    .module-1 h1 {
+        margin-left: 10px;
+        padding: 10px;
+        font-size: 25px;
+    }
+    .list-bar ul {
+        margin-top: -10px;
+        margin-left: 0px;
+    }
+    .list-bar ul li {
+        line-height: 80px;
+        padding-right: 20px;
+        font-size: 15px;
+    }
+    .data-b {
+        margin-right: 5px;
+        font-size: 10px;
+    }
+    .power-graph-div {
+        width: 330px;
+        height: 180px;
+        margin-left: 20px;
+    }
+    .power-graph {
+        margin-top: 30px;
+    }
+    .power-graph canvas {
+        height: 400px;
+        width: 100%;
+    }
+    .module-1 h3 {
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: 15px;
+    }
+    /*module 1 ends*/
+    .module-2 {
+        margin-top: 0px;
+        margin-left: 10px;
+        width: 100%;
+    }
+    .module-2 h1 {
+        margin-left: 20px;
+        margin-top: 26px;
+        font-size: 25px;
+    }
+    .socket-m-2 {
+        margin-top: 40px;
+        margin-left: 22px;
+        width: 325px;
+        height: 250px;
+    }
+    .list-bar-m-2 ul {
+        margin-top: 0px;
+        margin-left: 4px;
+    }
+    .list-bar-m-2 ul li {
+        padding-right: 10px;
+        font-size: 15px;
+    }
+    .list-bar-m-2 p {
+        padding: 20px;
+        line-height: 20px;
+    }
+    .socket-m-2-line {
+        margin-top: 30px;
+        margin-left: 20px;
+        width: 280px;
+    }
+    .socket-m-2-line h1 {
+        font-size: 25px;
+        margin-left: 90px;
+    }
+    /*module 2 ends*/
+    .module-3 {
+        margin-top: 0px;
+        margin-left: 10px;
+        width: 100%;
+    }
+    .module-3 h1 {
+        margin-left: 20px;
+        margin-top: 26px;
+        font-size: 25px;
+    }
+    .socket-m-3 {
+        margin-top: 40px;
+        margin-left: 22px;
+        width: 325px;
+        height: 250px;
+    }
+    .list-bar-m-3 ul {
+        margin-top: 0px;
+        margin-left: 4px;
+    }
+    .list-bar-m-3 ul li {
+        padding-right: 10px;
+        font-size: 15px;
+    }
+    .list-bar-m-3 p {
+        padding: 20px;
+        line-height: 20px;
+    }
+    .socket-m-3-line {
+        margin-top: 30px;
+        margin-left: 20px;
+        width: 280px;
+    }
+    .socket-m-3-line h1 {
+        font-size: 25px;
+        margin-left: 90px;
+    }
+    .config-res {
+        margin-left: 270px;
+        font-size: 23px;
+        margin-top: 10px;
+    }
+}

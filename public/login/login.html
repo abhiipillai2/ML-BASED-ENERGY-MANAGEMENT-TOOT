@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="login.css" />
+        <link rel="stylesheet" type="text/css" href="grid-login.css" />
+        <link rel="icon" href="../img/favcon.png" type="image/gif" sizes="20x20" />
+        <script src="https://kit.fontawesome.com/687c2b0779.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <title>Elektron beta-login</title>
+    </head>
+
+    <body>
+        <!--pre-loader-->
+        <div id="loading">
+            <img src="../img/preloader2.gif" />
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="nav" class="nav-bar">
+                    <div id="logo" class="logo">
+                        <img src="../img/logo-web.png" />
+                    </div>
+                    <div id="listNav" class="list-nav">
+                        <ul>
+                            <li><a href="../index.html">register</a></li>
+                            <li><a href="../dashBoard/1.html">support</a></li>
+                        </ul>
+                    </div>
+                    <div id="menuIcon" class="menu-icon-div">
+                        <i id="mobNavics" class="fas fa-bars menu-icon"></i>
+                    </div>
+                    <div id="mobNav" class="mob-nav">
+                        <ul>
+                            <li><a href="../index.html">register</a></li>
+                            <li><a href="../dashBoard/1.html">support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="loginForm" class="login-form-div">
+                        <form>
+                            <br /> E-mail
+                            <br />
+                            <input type="email" id="eMail" name="e-mail" value="@example.com" />
+                            <br /> Password
+                            <br />
+                            <input type="password" id="password" name="password" value="" />
+                            <br />
+                            <button class="btn-1" id="register1">Login</button>
+                        </form>
+                        <p>
+                            if you dont have a account
+                            <a href="../index.html">clik here </a> for register
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScrispt -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="login.js"></script>
+
+</html>

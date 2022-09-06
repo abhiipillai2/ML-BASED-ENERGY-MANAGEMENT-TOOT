@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="1.css" />
+        <link rel="stylesheet" type="text/css" href="grid.css" />
+        <link rel="icon" href="../img/favcon.png" type="image/gif" sizes="20x20" />
+        <script src="https://kit.fontawesome.com/687c2b0779.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <title>Elektron Beta</title>
+    </head>
+    </head>
+
+    <body>
+        <!--pre-loader-->
+        <div id="loading">
+            <img src="../img/preloader2.gif" />
+        </div>
+        <!--------connectin-part-->
+        <div id="connectDiv" class="connect-div">
+            <h4 id="close2">x</h4>
+            <h2 id="connectedId">connected</h2>
+            <input type="text" id="hardWareId" value="eknxx" class="inp" />
+            <div id="connectBtn" class="connect-btn">
+                <h3 id="connect">connect</h3>
+            </div>
+            <div id="disconnectBtn" class="disconnect-btn">
+                <h3 id="disConnect">disconnect</h3>
+            </div>
+            <p>
+                s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not
+                only 1960s with the d more r
+            </p>
+        </div>
+        <!--------account-part-->
+        <div id="acountDiv" class="account-div">
+            <h4 id="close1">x</h4>
+            <h2 id="userName">user</h2>
+            <div id="signOutBtn" class="sign-out-btn">
+                <h3 id="signOut">sign out</h3>
+            </div>
+            <p>report error</p>
+        </div>
+        <!------------voltage-current-curve-------------->
+        <div id="viDiv" class="vi-div">
+            <h4 id="close3">x</h4>
+            <h2 id="viTrgs">
+                graph of_
+                <select id="viSelect" class="option">
+          <option value="1">V</option>
+          <option value="2">I</option>
+        </select>
+            </h2>
+            <p>
+                s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy t
+            </p>
+            <div id="vIGraph" class="v-i-graph">
+                <canvas id="viGraph"> </canvas>
+            </div>
+        </div>
+        <!------------voltage-current-curve-------------->
+        <!------------powerfactor-curve------------------>
+        <div id="ppDiv" class="pp-div">
+            <h4 id="close4">x</h4>
+            <h2 id="ppTrgs">power factor graph</h2>
+            <p>
+                s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy t
+            </p>
+            <div id="pPGraph" class="p-p-graph">
+                <canvas id="ppGraph"> </canvas>
+            </div>
+        </div>
+        <!------------power-curve-------------->
+        <div id="mainContainer" class="">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="mainNavBar" class="main-nav-bar">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div id="nav-bar" class="nav-bar">
+                                    <div id="overlay" class="over-lay"></div>
+                                    <div id="logo" class="logo">
+                                        <img src="../img/logo3.png" />
+                                    </div>
+                                    <div id="list" class="list">
+                                        <ul>
+                                            <li title="graph of voltage and current" id="viGraphTriger">
+                                                <span class="fas fa-chart-line" style="
+                            color: #77b568;
+                            padding-right: 15px;
+                            font-size: 15px;
+                          "></span
+                        ><a href="#">voltage-current curve</a>
+                      </li>
+                      <li
+                        title="gaph of power factor and phase angle"
+                        id="ppTriger"
+                      >
+                        <span
+                          class="fas fa-chart-line"
+                          style="
+                            color: #77b568;
+                            padding-right: 15px;
+                            font-size: 15px;
+                          "
+                        ></span
+                        ><a href="#">power factor-phase curve</a>
+                      </li>
+                      <li
+                        title="elektron connections management "
+                        id="connectionManegement"
+                      >
+                        <span
+                          class="fas fa-wifi"
+                          style="
+                            color: #77b568;
+                            padding-right: 12px;
+                            font-size: 15px;
+                          "
+                        ></span
+                        ><a href="#">connections management</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="relseNote" class="relese-note">
+                    <h2>release note beta v 1.0</h2>
+
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="contentBar" class="content-bar">
+            <div class="row">
+              <div class="col-md-8">
+                <div id="account" class="account">
+                  <div id="userPort" class="user-port">
+                    <i id="mobNav" class="fas fa-bars mob-menu-icon"></i>
+
+                    <i
+                      id="userIc"
+                      class="fas fa-user-cog user-icon"
+                      title="user management"
+                    ></i>
+                    <i
+                      class="fas fa-plug connect-icon"
+                      title="connection indicatator"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="productDiscription" class="produt-dis">
+          <p>
+            is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy text ever since the
+            1500s, when an unknown printer took a galley of type and scrambled
+            it to make a type specimen book. It has survived not only five
+            centuries, but
+          </p>
+        </div>
+        <div id="module1" class="module-1">
+          <h1>power monitor</h1>
+          <di id="listBar" class="list-bar">
+            <ul>
+              <li id="lastHour">
+                <i class="fas fa-database data-b"></i> last
+                <select id="powerHourSelect">
+                  <option value="1">1 hour</option>
+                  <option value="2">5 hour</option>
+                  <option value="3">12 hour</option>
+                  <option value="4">15 hour</option>
+                </select>
+              </li>
+              <li id="lastDay">
+                <i class="fas fa-database data-b"></i>last
+                <select id="powerDaySelect">
+                  <option value="1">1 day</option>
+                  <option value="2">3 day</option>
+                  <option value="3">7 day</option>
+                </select>
+              </li>
+              <li id="lastMonth">
+                <i class="fas fa-database data-b"></i>last
+                <select id="powerMonthSelect">
+                  <option value="1">1 month</option>
+                  <option value="2">3 month</option>
+                </select>
+              </li>
+            </ul>
+            <div id="powerGraphDiv" class="power-graph-div">
+              <canvas id="powerGraph"> </canvas>
+            </div>
+          </di>
+          <h3 id="avgPower">total 000 Watt</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div id="module2" class="module-2">
+              <h1>unit conception data</h1>
+              <div id="socketM2" class="socket-m-2">
+                <div id="listBarM2" class="list-bar-m-2">
+                  <p>
+                    ly dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy
+                  </p>
+                  <ul>
+                    <li id="unitHour">
+                      last
+                      <select id="unitHourSelect">
+                        <option value="1">1 hour</option>
+                        <option value="2">5 hour</option>
+                        <option value="3">12 hour</option>
+                        <option value="4">15 hour</option>
+                      </select>
+                    </li>
+                    <li id="unitDay">
+                      last
+                      <select id="unitDaySelect">
+                        <option value="1">1 day</option>
+                        <option value="2">3 day</option>
+                        <option value="3">7 day</option>
+                      </select>
+                    </li>
+                    <li id="unitMonth">
+                      last
+                      <select id="unitMonthSelect">
+                        <option value="1">1 month</option>
+                        <option value="2">3 month</option>
+                      </select>
+                    </li>
+                  </ul>
+                  <div id="socketM2Overlay" class="socket-m-2-line">
+                    <h1 id="unitSoket">000 units</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div id="module3" class="module-3">
+              <h1>power usage bill</h1>
+              <div id="socketM3" class="socket-m-3">
+                <div id="listBarM3" class="list-bar-m-3">
+                  <p>
+                    ly dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy
+                  </p>
+                  <ul>
+                    <li id="billHour">
+                      last
+                      <select id="billHourSelect">
+                        <option value="1">1 hour</option>
+                        <option value="2">5 hour</option>
+                        <option value="3">12 hour</option>
+                        <option value="4">15 hour</option>
+                      </select>
+                    </li>
+                    <li id="billDay">
+                      last
+                      <select id="billDaySelect">
+                        <option value="1">1 day</option>
+                        <option value="2">3 day</option>
+                        <option value="3">7 day</option>
+                      </select>
+                    </li>
+                    <li id="billMonth">
+                      last
+                      <select id="billMonthSelect">
+                        <option value="1">1 month</option>
+                        <option value="2">3 month</option>
+                      </select>
+                    </li>
+                  </ul>
+                  <div id="socketM3Overlay" class="socket-m-3-line">
+                    <h1 id="billSoket">000 INR</h1>
+                  </div>
+                  <i
+                    class="fas fa-cogs config-res"
+                    title="you need to configure the billing option of youre electricity provider"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="dummy" class="dummy">
+            <h1>end</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScrispt -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="1.js"></script>
+  <script src="../bin/config.js"></script>
+  <script src="modules/adapter.js"></script>
+  <script src="modules/elektronChart.js"></script>
+  <script src="modules/httpFunction.js"></script>
+  <script src="modules/initialLoader.js"></script>
+  <script src="modules/masterLoader.js"></script>
+</html>
