@@ -16,41 +16,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors())
 
-
-//front-end pusher
-//index-sat-files
-app.use(express.static('public'))
-app.use('/public', express.static(__dirname + 'public/index.css'))
-app.use('/public', express.static(__dirname + 'public/grid-index.css'))
-app.use('/public', express.static(__dirname + 'public/index.js'))
-
-//dash-board-sat-fils
-app.use('/dashBoard', express.static(__dirname + 'public/dashBoard/1.html'))
-app.use('/dashBoard', express.static(__dirname + 'public/dashBoard/1.css'))
-app.use('/dashBoard', express.static(__dirname + 'public/dashBoard/grid.css'))
-app.use('/dashBoard', express.static(__dirname + 'public/dashBoard/1.js'))
-
-//img-sat-files
-app.use('/img', express.static(__dirname + 'public/img/logo-web.png'))
-app.use('/img', express.static(__dirname + 'public/img/logo2.png'))
-app.use('/img', express.static(__dirname + 'public/img/logo3.png'))
-app.use('/img', express.static(__dirname + 'public/img/favcon.png'))
-
-//login-sat-files
-app.use('/login', express.static(__dirname + 'public/login/login.html'))
-app.use('/login', express.static(__dirname + 'public/login/login.css'))
-app.use('/login', express.static(__dirname + 'public/login/grid-login.css'))
-app.use('/login', express.static(__dirname + 'public/login/login.js'))
-
-//js config file
-app.use('/bin', express.static(__dirname + 'public/bin/config.js'))
-
-//general routes
-app.get('', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html')
-
-});
-
 //BL Adapters
 //using AuthAdapter
 app.use(userAdapter);

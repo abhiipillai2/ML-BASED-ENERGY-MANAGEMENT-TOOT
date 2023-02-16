@@ -38,7 +38,7 @@ router.get('/hourPower/:tred/:id', (req, res) => {
         logger.info("finding data")
         logger.info(`SELECT * FROM puf_${node}  ORDER BY timestamp DESC LIMIT ${maxnumber}`)
 
-        connection.query('SELECT * FROM puf_' + node + ' ORDER BY timestamp DESC LIMIT ' + maxnumber + '', (err, rows) => {
+        connection.query("SELECT DATE_FORMAT(update_time, '%Y-%m-%d %H:00:00') AS hour_start, AVG(apparant_power) AS avg_value FROM vip_push_master_data WHERE update_time >= DATE_SUB(NOW(), INTERVAL ? HOUR) AND hardware_id = ? GROUP BY HOUR(update_time)",[maxnumber,node],(err, rows) => {
             connection.release()
 
             if (!err) {
@@ -50,7 +50,7 @@ router.get('/hourPower/:tred/:id', (req, res) => {
             } else {
                 res.send(err)
 
-                logger.error("database eoor")
+                logger.error("database error")
                 logger.error(err)
             }
         });
@@ -85,7 +85,7 @@ router.get('/dayPower/:tred/:id', (req, res) => {
         logger.info("finding data")
         logger.info(`SELECT * FROM puf_day${node}  ORDER BY timestamp DESC LIMIT ${maxnumber}`)
 
-        connection.query('SELECT * FROM puf_day_' + node + ' ORDER BY timestamp DESC LIMIT ' + maxnumber + '', (err, rows) => {
+        connection.query('SELECT DATE(update_time) AS day_start, AVG(apparant_power) AS avg_value FROM vip_push_master_data WHERE update_time >= DATE_SUB(NOW(), INTERVAL ? DAY) AND hardware_id = ? GROUP BY DATE(update_time)',[maxnumber,node], (err, rows) => {
             connection.release()
 
             if (!err) {
@@ -131,7 +131,7 @@ router.get('/monthPower/:tred/:id', (req, res) => {
         logger.info("finding data")
         logger.info(`SELECT * FROM puf_month${node}  ORDER BY timestamp DESC LIMIT ${maxnumber}`)
 
-        connection.query('SELECT * FROM puf_month_' + node + ' ORDER BY timestamp DESC LIMIT ' + maxnumber + '', (err, rows) => {
+        connection.query("SELECT DATE_FORMAT(update_time, '%Y-%m-01') AS month_start, AVG(apparant_power) AS avg_value FROM vip_push_master_data WHERE update_time >= DATE_SUB(NOW(), INTERVAL ? MONTH) AND hardware_id = ? GROUP BY DATE_FORMAT(update_time, '%Y-%m')",[maxnumber,node], (err, rows) => {
             connection.release()
 
             if (!err) {
@@ -177,7 +177,7 @@ router.get('/hourUnit/:tred/:id', (req, res) => {
         logger.info("finding data")
         logger.info(`SELECT * FROM puf_${node}  ORDER BY timestamp DESC LIMIT ${maxnumber}`)
 
-        connection.query('SELECT * FROM puf_' + node + ' ORDER BY timestamp DESC LIMIT ' + maxnumber + '', (err, rows) => {
+        connection.query('SELECT apparant_power FROM vip_push_master_data WHERE update_time >= NOW() - INTERVAL ? HOUR and hardware_id = ?',[maxnumber,node], (err, rows) => {
             connection.release()
 
             if (!err) {
@@ -187,11 +187,12 @@ router.get('/hourUnit/:tred/:id', (req, res) => {
                 let snapshot = 0
                 for (let i = 0; i < grb.length; i++) {
 
-                    snapshot_value = grb[i].unint_value + snapshot_value
+                    snapshot_value = grb[i].apparant_power + snapshot_value
                 }
                 snapshot = snapshot_value / grb.length
+                let avgUnit = (snapshot/1000)
 
-                let snapJSON = { value: snapshot }
+                let snapJSON = { value: avgUnit }
                 res.send(snapJSON)
 
                 logger.info("sending data packet")
@@ -236,7 +237,8 @@ router.get('/dayUnit/:tred/:id', (req, res) => {
         logger.info("finding data")
         logger.info(`SELECT * FROM puf_day${node}  ORDER BY timestamp DESC LIMIT ${maxnumber}`)
 
-        connection.query('SELECT * FROM puf_day_' + node + ' ORDER BY timestamp DESC LIMIT ' + maxnumber + '', (err, rows) => {
+        let dayHour = (maxnumber * 24)
+        connection.query('SELECT apparant_power FROM vip_push_master_data WHERE update_time >= NOW() - INTERVAL ? HOUR and hardware_id = ?',[dayHour,node], (err, rows) => {
             connection.release()
 
             if (!err) {
@@ -246,11 +248,12 @@ router.get('/dayUnit/:tred/:id', (req, res) => {
                 let snapshot = 0
                 for (let i = 0; i < grb.length; i++) {
 
-                    snapshot_value = grb[i].unit_value_day + snapshot_value
+                    snapshot_value = grb[i].apparant_power + snapshot_value
                 }
                 snapshot = snapshot_value / grb.length
 
-                let snapJSON = { value: snapshot }
+                let avgUnit = (snapshot/1000)
+                let snapJSON = { value: avgUnit }
                 res.send(snapJSON)
 
                 logger.info("sending data packet")
@@ -294,7 +297,8 @@ router.get('/monthUnit/:tred/:id', (req, res) => {
         logger.info("finding data")
         logger.info(`SELECT * FROM puf_month_${node}  ORDER BY timestamp DESC LIMIT ${maxnumber}`)
 
-        connection.query('SELECT * FROM puf_month_' + node + ' ORDER BY timestamp DESC LIMIT ' + maxnumber + '', (err, rows) => {
+        let monthHour = (maxnumber * 672)
+        connection.query('SELECT apparant_power FROM vip_push_master_data WHERE update_time >= NOW() - INTERVAL ? HOUR and hardware_id = ?',[monthHour,node], (err, rows) => {
             connection.release()
 
             if (!err) {
@@ -304,11 +308,12 @@ router.get('/monthUnit/:tred/:id', (req, res) => {
                 let snapshot = 0
                 for (let i = 0; i < grb.length; i++) {
 
-                    snapshot_value = grb[i].unit_value_month + snapshot_value
+                    snapshot_value = grb[i].apparant_power + snapshot_value
                 }
                 snapshot = snapshot_value / grb.length
+                let avgUnit = (snapshot/1000)
 
-                let snapJSON = { value: snapshot }
+                let snapJSON = { value: avgUnit }
                 res.send(snapJSON)
 
                 logger.info("sending data packet")
@@ -525,7 +530,7 @@ router.get('/viTriger/:tred/:id', (req, res) => {
         logger.info("finding data")
         logger.info(`SELECT * FROM vip_${node}  ORDER BY timestamp DESC LIMIT ${maxnumber}`)
 
-        connection.query('SELECT * FROM vip_' + node + ' ORDER BY timestamp DESC LIMIT ' + maxnumber + '', (err, rows) => {
+        connection.query("SELECT DATE_FORMAT(update_time, '%Y-%m-%d %H:00:00') AS hour_start, AVG(current) AS avg_current_value, AVG(voltage) AS avg_voltage_value, AVG(power_factor) AS avg_pf_value FROM vip_push_master_data WHERE update_time >= DATE_SUB(NOW(), INTERVAL ? HOUR) AND hardware_id = ? GROUP BY HOUR(update_time)",[maxnumber,node] ,(err, rows) => {
             connection.release()
 
             if (!err) {

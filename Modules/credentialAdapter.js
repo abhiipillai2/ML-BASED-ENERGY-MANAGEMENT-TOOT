@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const pool = require('./databseAdapter')
 const logger = require('./logMaster')
-const e = require('express')
+// const express = require('express')
 const dotenv = require('dotenv').config({ path: './class/sql.env' })
 const router = express.Router()
 
@@ -95,66 +95,12 @@ router.get('/rg/:id', (req, res) => {
         logger.info("INSERT INTO harrdware_id_master SET id=?")
 
         connection.query('INSERT INTO harrdware_id_master SET id=?', hJson, (err, rows) => {
-
-        });
-
-    });
-
-    logger.info("table creation started")
-        //table creating section
-        //for vip table creation
-    pool.connection.getConnection((err, connection) => {
-        if (err) {
-            logger.error(err)
-        }
-
-        logger.info("vip table cration")
-        logger.info(`CREATE TABLE vip_${hardwareTable} (id int NOT NULL AUTO_INCREMENT , dummy int , voltage_value float , current_value float , power_factor_value float , timestamp TIMESTAMP NOT NULL , PRIMARY KEY (id))'`)
-
-        connection.query('CREATE TABLE ' + 'vip_' + hardwareTable + ' (id int NOT NULL AUTO_INCREMENT , dummy int , voltage_value float , current_value float , power_factor_value float , timestamp TIMESTAMP NOT NULL , PRIMARY KEY (id))', (err, rows) => {
-
-        });
-
-    });
-
-    //for puf table creation
-    logger.info("puf table cration")
-    logger.info(`CREATE TABLE puf_${hardwareTable} (id int NOT NULL AUTO_INCREMENT , dummy int , voltage_value float , current_value float , power_factor_value float , timestamp TIMESTAMP NOT NULL , PRIMARY KEY (id))'`)
-
-    pool.connection.getConnection((err, connection) => {
-        if (err) throw err
-        connection.query('CREATE TABLE ' + 'puf_' + hardwareTable + ' (id int NOT NULL AUTO_INCREMENT , dummy int , power_value float , unint_value float , fare_value float , timestamp TIMESTAMP NOT NULL , PRIMARY KEY (id))', (err, rows) => {
-
-        });
-
-    });
-
-    //for puf day--creation
-
-    logger.info("puf day table cration")
-    logger.info(`CREATE TABLE puf_day_${hardwareTable} (id int NOT NULL AUTO_INCREMENT , dummy int , voltage_value float , current_value float , power_factor_value float , timestamp TIMESTAMP NOT NULL , PRIMARY KEY (id))'`)
-
-
-    pool.connection.getConnection((err, connection) => {
-        if (err) throw err
-        connection.query('CREATE TABLE ' + 'puf_day_' + hardwareTable + ' (id int NOT NULL AUTO_INCREMENT , dummy int , power_value_day float , unit_value_day float , fare_value_day float , timestamp TIMESTAMP NOT NULL , PRIMARY KEY (id))', (err, rows) => {
-
-        });
-
-    });
-
-    //for puf--mnth creation
-
-    logger.info("puf month table cration")
-    logger.info(`CREATE TABLE puf_month_s${hardwareTable} (id int NOT NULL AUTO_INCREMENT , dummy int , voltage_value float , current_value float , power_factor_value float , timestamp TIMESTAMP NOT NULL , PRIMARY KEY (id))'`)
-
-
-    pool.connection.getConnection((err, connection) => {
-        if (err) throw err
-        connection.query('CREATE TABLE ' + 'puf_month_' + hardwareTable + ' (id int NOT NULL AUTO_INCREMENT , dummy int , power_value_month float , unit_value_month float , fare_value_month float , timestamp TIMESTAMP NOT NULL , PRIMARY KEY (id))', (err, rows) => {
             connection.release()
             if (!err) {
-                res.send("ok-200-crated")
+                res.send({
+                    "statusCode": "SC0000",
+                    "statusDesc": "Success"
+                })
 
                 logger.info("all tables are created")
                 logger.info("end of request proceesing")
@@ -169,7 +115,6 @@ router.get('/rg/:id', (req, res) => {
         });
 
     });
-
 });
 
 
